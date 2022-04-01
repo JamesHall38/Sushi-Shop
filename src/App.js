@@ -4,6 +4,9 @@ import { BrowserRouter, Routes, Route, Link, useNavigate, useLocation } from 're
 import { Cart, Checkout, Model } from './components'
 import { commerce } from './lib/commerce'
 import { Canvas } from '@react-three/fiber'
+import useStyles from './components/styles'
+
+
 
 
 const Home = () => {
@@ -12,6 +15,8 @@ const Home = () => {
   const [order, setOrder] = useState({})
   const [errorMessage, setErrorMessage] = useState('')
   const [shopPage, setShopPage] = useState(false)
+
+  const classes = useStyles()
 
   const navigate = useNavigate()
   const location = useLocation()
@@ -75,12 +80,9 @@ const Home = () => {
 
   return (
     <>
-      <Canvas style={{
-        background: "black",
-        height: '100%',
-        width: '100%',
-        position: 'fixed',
-      }}
+      <Canvas style={{ position: 'fixed' }}
+        className={classes.canvas}
+        dpr={Math.max(window.devicePixelRatio, 2)}
         flat
         shadows
         pixelRatio={window.devicePixelRatio}
@@ -130,12 +132,16 @@ const Home = () => {
 
 
 const App = () => {
+  const classes = useStyles()
+
   return (
     <BrowserRouter>
       <CssBaseline />
-      <Suspense fallback={null}>
-        <Home />
-      </Suspense >
+      <div className={classes.root}>
+        <Suspense fallback={(<div className={classes.suspense} > <div className={classes.load} /> </div>)}>
+          <Home />
+        </Suspense >
+      </div>
     </BrowserRouter>
   )
 }
