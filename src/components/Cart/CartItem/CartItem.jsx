@@ -2,9 +2,9 @@ import React from 'react'
 import { IconButton, Card } from '@material-ui/core'
 import { Add, Remove } from '@material-ui/icons'
 import useStyles from './styles'
-import californiaRoll from '../../../assets/CaliforniaRoll.png'
-import sushi from '../../../assets/Sushi.png'
-import maki from '../../../assets/Maki.png'
+import californiaRoll from '../../../assets/CaliforniaRoll.avif'
+import sushi from '../../../assets/Sushi.avif'
+import maki from '../../../assets/Maki.avif'
 
 
 
