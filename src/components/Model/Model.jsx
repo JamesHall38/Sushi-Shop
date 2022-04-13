@@ -83,19 +83,28 @@ const Controls = ({ shopPage }) => {
   const [mousePosition, setMousePosition] = useState({ x: null, y: null })
 
   const handleMouseMove = (event) => {
-    setMousePosition({ x: event.pageX, y: event.pageY })
+    setMousePosition({ x: (event.pageX / window.innerWidth - 0.5) / 3, y: (event.pageY / window.innerHeight - 0.5) / 6 })
   }
+  const handleDeviceOrientationMove = (event) => {
+    setMousePosition({ x: ((event.gamma + 90) / 180 - 0.5) / 3, y: ((Math.abs(event.beta) + 40) / 180 - 0.5) / 3 })
+  }
+
 
   useEffect(() => {
     window.addEventListener('mousemove', handleMouseMove)
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
 
+  useEffect(() => {
+    window.addEventListener('deviceorientation', handleDeviceOrientationMove)
+    return () => window.removeEventListener('deviceorientation', handleDeviceOrientationMove)
+  }, [])
+
   useFrame(({ camera }) => {
     if (!shopPage) {
       if (mousePosition.x && mousePosition.y) {
-        camera.position.x += (mousePosition.x / window.innerWidth - 0.5) / 3
-        camera.position.y += (mousePosition.y / window.innerHeight - 0.5) / 6
+        camera.position.x += mousePosition.x
+        camera.position.y += mousePosition.y
       }
       camera.position.lerp(new Vector3(8.3, 2.8, 12.25), 0.04)
       setcamTarget(camTarget.lerp(new Vector3(0, 2.25, -1.25), 0.05))
