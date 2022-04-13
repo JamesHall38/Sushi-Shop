@@ -70,8 +70,8 @@ const Lights = ({ shopPage }) => {
 
       <pointLight ref={smallLight1} color={0xFFBF84} distance={8} intensity={0} decay={2} position={[-6.5, 3.25, 1.8]} />
       <pointLight ref={smallLight2} color={0xFFBF84} distance={8} intensity={0} decay={2} position={[-4.5, 3.25, -0.3]} />
-      <pointLight ref={yellowLight} color={0xFFA200} distance={6} intensity={0} decay={2} castShadow position={[0.4, 2.8, 0.4]} />
-      <pointLight ref={standLight} color={0xFFB682} distance={8} intensity={0} decay={2} castShadow position={[3.4, 3.9, -7.5]} />
+      <pointLight ref={yellowLight} color={0xFFA200} distance={6} intensity={0} decay={2} position={[0.4, 2.8, 0.4]} />
+      <pointLight ref={standLight} color={0xFFB682} distance={8} intensity={0} decay={2} position={[3.4, 3.9, -7.5]} />
 
     </>
   )
@@ -140,7 +140,7 @@ const Water = ({ geometry, material, shopPage }) => {
         water.current.material.opacity += 0.005
     }
   })
-  return <mesh geometry={geometry} material={material} receiveShadow ref={water} />
+  return <mesh geometry={geometry} material={material} ref={water} />
 }
 
 
@@ -160,19 +160,19 @@ const Model = ({ shopPage, onStoreButton }) => {
       <primitive object={nodes.Store} onClick={onStoreButton} />
 
 
-      <mesh geometry={nodes.Merged_1.geometry} material={materials.Floor} receiveShadow />
-      <mesh geometry={nodes.Merged_2.geometry} material={materials.Wood2} receiveShadow />
-      <mesh geometry={nodes.Merged_3.geometry} material={materials.Grass} castShadow />
-      <mesh geometry={nodes.Merged_4.geometry} material={materials.Grey} castShadow />
+      <mesh geometry={nodes.Merged_1.geometry} material={materials.Floor} />
+      <mesh geometry={nodes.Merged_2.geometry} material={materials.Wood2} />
+      <mesh geometry={nodes.Merged_3.geometry} material={materials.Grass} />
+      <mesh geometry={nodes.Merged_4.geometry} material={materials.Grey} />
       <mesh geometry={nodes.Merged_5.geometry} material={materials.Shingle} />
       <mesh geometry={nodes.Merged_6.geometry} material={materials.Window} />
       <mesh geometry={nodes.Merged_7.geometry} material={materials.Rock} />
       <mesh geometry={nodes.Merged_8.geometry} material={materials.Roof} />
       <mesh geometry={nodes.Merged_9.geometry} material={materials.Red} />
-      <mesh geometry={nodes.Merged_10.geometry} material={materials.Wood} castShadow />
+      <mesh geometry={nodes.Merged_10.geometry} material={materials.Wood} />
       <mesh geometry={nodes.Merged_11.geometry} material={materials.Gold} />
       <Water geometry={nodes.Merged_12.geometry} material={materials.Water} shopPage={shopPage} />
-      <mesh geometry={nodes.Merged_13.geometry} material={materials.Water2} receiveShadow />
+      <mesh geometry={nodes.Merged_13.geometry} material={materials.Water2} />
 
     </group>
   )

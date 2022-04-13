@@ -84,7 +84,6 @@ const Home = () => {
         className={classes.canvas}
         dpr={Math.max(window.devicePixelRatio, 2)}
         flat
-        shadows
         pixelRatio={window.devicePixelRatio}
         camera={{ position: [8, 6, 12], fov: 50 }}
         onCreated={({ gl }) => {

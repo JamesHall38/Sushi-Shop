@@ -5,9 +5,9 @@ import Product from './Product/Product'
 import { Link } from 'react-router-dom'
 import useStyles from './styles'
 
-import californiaRollImg from '../../assets/CaliforniaRoll.png'
-import sushiImg from '../../assets/Sushi.png'
-import makiImg from '../../assets/Maki.png'
+import californiaRollImg from '../../assets/CaliforniaRoll.avif'
+import sushiImg from '../../assets/Sushi.avif'
+import makiImg from '../../assets/Maki.avif'
 import allImg from '../../assets/rotatingSushi.gif'
 
 
