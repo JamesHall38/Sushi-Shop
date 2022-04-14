@@ -5,9 +5,9 @@ import Product from './Product/Product'
 import { Link } from 'react-router-dom'
 import useStyles from './styles'
 
-import californiaRollImg from '../../assets/CaliforniaRoll.avif'
-import sushiImg from '../../assets/Sushi.avif'
-import makiImg from '../../assets/Maki.avif'
+import californiaRollImg from '../../assets/CaliforniaRoll.png'
+import sushiImg from '../../assets/Sushi.png'
+import makiImg from '../../assets/Maki.png'
 import allImg from '../../assets/rotatingSushi.gif'
 
 
@@ -82,7 +82,14 @@ const Cart = ({ onAddToCart, cart, products, onUpdateCartQty, onRemoveFromCart, 
           onRemoveFromCart={onRemoveFromCart}
           products={products}
           cart={cart}
-          onAddToCart={onAddToCart} />
+          onAddToCart={onAddToCart}
+          sushi={sushi}
+          setSushi={setSushi}
+          maki={maki}
+          setMaki={setMaki}
+          californiaRoll={californiaRoll}
+          setCaliforniaRoll={setCaliforniaRoll}
+        />
       </Grid>
 
       <Grid item xs={3} md={2} className={classes.totalAndButtons} >
