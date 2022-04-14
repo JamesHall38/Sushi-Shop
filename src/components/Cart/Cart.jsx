@@ -72,7 +72,7 @@ const Cart = ({ onAddToCart, cart, products, onUpdateCartQty, onRemoveFromCart, 
     <Grid container justifyContent='space-evenly' alignItems='center' >
 
       <Grid item xs={12} md={6} className={classes.products} >
-        <img src={allImg} alt="all" style={{ height: '55vh', position: 'relative' }} />
+        <img src={allImg} alt="all" style={{ height: '55vh', position: 'relative', paddingRight: '15px' }} />
         <div className={classes.products} style={{ flexDirection: 'column' }}>
           {products.map((product, index) => (
             <Product key={index} product={product} onAddToCart={onAddToCart} />
