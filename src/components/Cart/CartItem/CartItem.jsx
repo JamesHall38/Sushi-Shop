@@ -23,7 +23,7 @@ const CartItem = ({ cart, products, onUpdateCartQty, onAddToCart }) => {
 
   return (
     <>
-      <div style={{ display: 'flex', justifyContent: 'space-evenly' }} >
+      <div className={classes.responsiveButtons} >
         <Card className={classes.buttons} >
 
           <IconButton size='small' className={classes.button}

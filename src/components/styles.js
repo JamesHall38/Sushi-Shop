@@ -3,8 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 export default makeStyles(() => ({
     root: {
         background: 'black',
-        // width: '100vw',
-        height: '100vh',
+        height: '100%',
     },
     suspense: {
         position: 'absolute',

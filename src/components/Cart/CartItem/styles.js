@@ -15,5 +15,14 @@ export default makeStyles((theme) => ({
     maxHeight: '20px',
     maxWidth: '20px',
     background: 'rgba(255,255,255, 0.2)'
+  },
+  responsiveButtons: {
+    display: 'flex',
+    justifyContent: 'space-evenly',
+    "@media (max-width: 900px)": {
+      flexDirection: 'column',
+      alignItems: 'center',
+      height: '80vh',
+    }
   }
 }))

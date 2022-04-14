@@ -6,7 +6,7 @@ export default makeStyles(() => ({
     background: 'rgba(0, 0, 0, 0)',
     color: 'white',
     boxShadow: 'none',
-    height: '20vh',
+    maxHeight: '25vh',
     maxWidth: '300px',
     display: 'flex',
     alignItems: 'center',
