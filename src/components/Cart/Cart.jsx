@@ -22,12 +22,14 @@ const Cart = ({ onAddToCart, cart, products, onUpdateCartQty, onRemoveFromCart, 
 
   const [stop, setStop] = useState(true)
   useEffect(() => {
-    if (stop && Object.keys(cart).length) {
-      setSushi(cart.line_items.find(child => child.name === 'Sushi') ? cart.line_items.find(child => child.name === 'Sushi') : { quantity: 0 })
-      setMaki(cart.line_items.find(child => child.name === 'Maki') ? cart.line_items.find(child => child.name === 'Maki') : { quantity: 0 })
-      setCaliforniaRoll(cart.line_items.find(child => child.name === 'California Roll') ? cart.line_items.find(child => child.name === 'California Roll') : { quantity: 0 })
+    if (Object.keys(cart).length) {
+      if (stop) {
+        setSushi(cart.line_items.find(child => child.name === 'Sushi') ? cart.line_items.find(child => child.name === 'Sushi') : { quantity: 0 })
+        setMaki(cart.line_items.find(child => child.name === 'Maki') ? cart.line_items.find(child => child.name === 'Maki') : { quantity: 0 })
+        setCaliforniaRoll(cart.line_items.find(child => child.name === 'California Roll') ? cart.line_items.find(child => child.name === 'California Roll') : { quantity: 0 })
+        setStop(false)
+      }
       setTotalPrice(cart.subtotal.formatted_with_symbol)
-      setStop(false)
     }
   }, [cart, stop])
 
