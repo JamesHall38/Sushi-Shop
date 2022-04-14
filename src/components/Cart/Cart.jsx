@@ -14,20 +14,22 @@ import allImg from '../../assets/rotatingSushi.gif'
 const Cart = ({ onAddToCart, cart, products, onUpdateCartQty, onRemoveFromCart, onBack }) => {
   const classes = useStyles()
 
-  const [sushi, setSushi] = useState({})
-  const [maki, setMaki] = useState({})
-  const [californiaRoll, setCaliforniaRoll] = useState({})
+  const [sushi, setSushi] = useState({ quantity: 0 })
+  const [maki, setMaki] = useState({ quantity: 0 })
+  const [californiaRoll, setCaliforniaRoll] = useState({ quantity: 0 })
   const [totalPrice, setTotalPrice] = useState()
 
 
+  const [stop, setStop] = useState(true)
   useEffect(() => {
-    if (Object.keys(cart).length) {
-      setSushi(cart.line_items.find(child => child.name === 'Sushi'))
-      setMaki(cart.line_items.find(child => child.name === 'Maki'))
-      setCaliforniaRoll(cart.line_items.find(child => child.name === 'California Roll'))
+    if (stop && Object.keys(cart).length) {
+      setSushi(cart.line_items.find(child => child.name === 'Sushi') ? cart.line_items.find(child => child.name === 'Sushi') : { quantity: 0 })
+      setMaki(cart.line_items.find(child => child.name === 'Maki') ? cart.line_items.find(child => child.name === 'Maki') : { quantity: 0 })
+      setCaliforniaRoll(cart.line_items.find(child => child.name === 'California Roll') ? cart.line_items.find(child => child.name === 'California Roll') : { quantity: 0 })
       setTotalPrice(cart.subtotal.formatted_with_symbol)
+      setStop(false)
     }
-  }, [cart])
+  }, [cart, stop])
 
   const FilledCart = () => (
     <Card className={classes.total}>
