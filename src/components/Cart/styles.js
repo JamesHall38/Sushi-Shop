@@ -29,9 +29,13 @@ export default makeStyles(() => ({
     color: 'white',
     fontWeight: 'bold',
     borderColor: 'white',
-    margin: '4px'
+    margin: '4px',
+    overflow: 'hidden',
+
   },
   products: {
+    overflow: 'hidden',
+    // width: '10px',
     height: '100vh',
     display: 'flex',
     justifyContent: 'center',

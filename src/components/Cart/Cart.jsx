@@ -77,7 +77,7 @@ const Cart = ({ onAddToCart, cart, products, onUpdateCartQty, onRemoveFromCart, 
       </Grid>
 
       <Grid item xs={8} md={4} >
-        <CartItem style={{ padding: '0', position: 'absolute', }}
+        <CartItem style={{ padding: '0', position: 'absolute' }}
           onUpdateCartQty={onUpdateCartQty}
           onRemoveFromCart={onRemoveFromCart}
           products={products}

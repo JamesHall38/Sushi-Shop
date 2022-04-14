@@ -7,7 +7,7 @@ export default makeStyles(() => ({
     color: 'white',
     boxShadow: 'none',
     height: '20vh',
-    width: '300px',
+    maxWidth: '300px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
@@ -15,6 +15,7 @@ export default makeStyles(() => ({
   cardContent: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    marginRight: '20px'
   }
 }))
